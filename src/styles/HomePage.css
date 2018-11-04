@@ -1,0 +1,20 @@
+button{
+    width: 10em; 
+    padding: 0.5em;
+    font-size: 1.6vw;
+    background: #D1FFD7;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.7em;
+    border: 1px solid rgba(20, 20, 20, 0.5);
+    border-radius: 0.5em;
+}
+
+button:focus {
+    outline:0;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #A0FF00;
+}

@@ -1,0 +1,21 @@
+.featured-image{
+    width: 100%;
+    height: 330px;
+}
+
+.restaurant-name{
+    color: #2B2031;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    word-spacing: 8px;
+}
+
+.user-image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.user-name{
+    margin: 0;
+}
