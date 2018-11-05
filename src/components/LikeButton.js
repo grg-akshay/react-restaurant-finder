@@ -9,7 +9,7 @@ class LikeButton extends Component {
     constructor(props){
         super(props);
         this.state={
-            addClass: props.likes.includes(props.res_id),
+            addClass: props.likes && props.likes.includes(props.res_id), //
         };
         this.toggle=this.toggle.bind(this);
     }
