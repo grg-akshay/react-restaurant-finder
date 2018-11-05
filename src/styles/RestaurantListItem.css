@@ -76,3 +76,17 @@ a {
 .res_review{
     margin-left: 19%;
 }
+
+.fa-position{
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.fa-unfill{
+    text-shadow: 0px 0px 10px black;
+    color:white; 
+}
+.fa-fill{
+    color:red;   
+}
