@@ -3,9 +3,7 @@ import {Link} from 'react-router-dom';
 import '../styles/RestaurantListItem.css';
 import '../styles/Details.css';
 import RestaurantItemBody from '../components/RestaurantItemBody';
-// import {decideColor} from '../utils/decideColor';
-import { setLike } from '../actions/like';
-import { unsetLike } from '../actions/like';
+import LikeButton from '../components/LikeButton';
 
 const photo = require('../notAvailable.png');
 
@@ -24,19 +22,21 @@ const RestaurantListItem = (props)=> {
             <div className='media-body'>
             <Link to={`/detail/${props.restaurant.id}`} ><h3 className='restaurant-name res_name'>{props.restaurant.name}</h3> </Link>
               <RestaurantItemBody rating={props.restaurant.user_rating.aggregate_rating} votes={props.restaurant.user_rating.votes} reviews_count={props.review.reviews_count}/>       
-              <span><button onClick={(e)=>{
+            
+              <LikeButton res_id={props.restaurant.id} likes={props.likes} />
+              {/* <span><div onClick={(e)=>{
                 console.log('like ', props.restaurant.id);
                 if(props.likes && props.likes.includes(props.restaurant.id)){
                   //then remove
                   props.dispatch(unsetLike(props.restaurant.id));
-                  e.target.innerText='Like';
+                  //e.target.innerText='Like';
                 }else{
                   props.dispatch(setLike(props.restaurant.id));
-                  e.target.innerText='Liked';
+                  //e.target.innerText='Liked';
                 }
                 
                 
-              }}>{props.likes && props.likes.includes(props.restaurant.id)?'Liked': 'Like'}</button></span>
+              }}><i className="fa fa-heart fa-position fa-1x"></i></div></span> */}
 
         
             </div>

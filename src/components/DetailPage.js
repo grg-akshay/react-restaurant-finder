@@ -4,8 +4,7 @@ import '../styles/Details.css';
 import '../styles/RestaurantListItem.css';
 import UserReviews from './UserReviews';
 import {decideColor} from '../utils/decideColor';
-import { setLike } from '../actions/like';
-import { unsetLike } from '../actions/like';
+import LikeButton from '../components/LikeButton';
 
 const DetailPage= (props) => {
 
@@ -25,24 +24,8 @@ const DetailPage= (props) => {
         <span> ({restaurant.user_rating.votes} votes)</span>
         <span className='res_review' >| &nbsp;&nbsp; {review.reviews_count} reviews</span>  
         
-        <span><button onClick={(e)=>{
-          console.log('like ');
-          if(props.likes && props.likes.includes(props.match.params.id)){
-            //then remove
-            props.dispatch(unsetLike(props.match.params.id));
-            e.target.innerText='Like';
-          }else{
-            props.dispatch(setLike(props.match.params.id));
-            e.target.innerText='Liked';
-          }
-          
-          
-        }}>{props.likes && props.likes.includes(props.match.params.id)?'Liked': 'Like'}</button></span>
 
-        
-        {/* <p>
-          <i className='fa fa-heart yellow' tooltip='Like button' aria-hidden='true' /> Like
-        </p>     */}
+        <LikeButton res_id={props.match.params.id} likes={props.likes} />
         <hr />
 
         <p><strong>Cuisines: </strong>{restaurant.cuisines}</p>
